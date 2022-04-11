@@ -1,0 +1,30 @@
+.customer-container{
+     padding-top: 5%;
+    @media (max-width: 768px) {
+        padding-top: 15%;
+    }
+}
+.newCustomer{
+    padding-bottom: 10PX;
+    @media (max-width: 768px) {
+        padding-bottom: 15%;
+    }
+}
+.customer-card{
+    margin: 1%;
+     display: inline-block;
+     width:20% ;
+     margin:  1%;
+     @media (max-width: 768px) {
+         width: 98%;
+     }
+}
+.customer-header-image{
+ background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
+ background-size: cover;
+}
+.paginator-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
