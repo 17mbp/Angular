@@ -1,4 +1,4 @@
-<div class="table-results-base" [ngStyle]="{ 'min-height': minTableHeight+'px' }">
+<div class="table-results-base" [ngStyle]="{ 'min-height': minTableHeight +'px' }">
   <div *ngIf="items && items.length > 0">
     <div>
       <ngx-datatable #myTabla class="material striped ngx-table"
@@ -20,8 +20,7 @@
 
     <ngx-datatable-row-detail #myDetailRow>
       <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
-        <ng-container [ngTemplateOutlet]="detailTemplate" [ngTemplateOutletContext]="{row:row}">
-          
+        <ng-container [ngTemplateOutlet]="detailTemplate" [ngTemplateOutletContext]="{row:row}">          
         </ng-container>
       </ng-template>
     </ngx-datatable-row-detail>

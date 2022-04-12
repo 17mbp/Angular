@@ -2,7 +2,6 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/co
 import { ActivatedRoute } from '@angular/router';
 import { OrderList } from '../models/order-list';
 import { OrderDetailService } from './order-detail.service';
-
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
@@ -12,10 +11,9 @@ import { OrderDetailService } from './order-detail.service';
 export class OrderDetailComponent implements OnInit, AfterViewInit {
 orderId: number;
 orderItem: OrderList = new OrderList();
-public detailColumns: object[] = [];
+public detailColumns?: object[] = [];
   constructor(private service: OrderDetailService, private ref: ChangeDetectorRef,
      private route: ActivatedRoute) { }
-
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.orderId = params.id;

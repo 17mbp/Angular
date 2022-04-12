@@ -5,7 +5,7 @@ import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core'
   styleUrls: ['./table-view.component.scss']
 })
 export class TableViewComponent<T> implements OnInit {
-  @Input() minTablaHeight: number = 500;
+  @Input() minTableHeight: number = 500;
   @Input() items: object[] = [];
   @Input() colums: object[] = [];
   @Input() limit?: number;
