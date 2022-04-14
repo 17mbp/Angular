@@ -3,7 +3,7 @@
     <button mat-raised-button color="primary" (click)="newCustomer()">New Cus</button>
   </div>
   <div>
-  <div class="customer-card" *ngFor="let item of customers" >
+  <div class="customer-card" *ngFor="let item of customers$ | async">
     <mat-card>
       <mat-card-header>
         <div mat-card-avatar class="customer-header-image"></div>

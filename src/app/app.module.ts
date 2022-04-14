@@ -13,6 +13,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthHttpInterceptors } from './auth/AuthHttpInterceptors';
 import { MaterialModule } from './/material.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,8 @@ import { MaterialModule } from './/material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({},{}),
+    EffectsModule.forRoot([]),
     SharedModule,   
     AppRoutingModule,
     FormsModule, 
