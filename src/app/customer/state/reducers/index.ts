@@ -10,3 +10,5 @@ export const reducers: ActionReducerMap<CustomerState> = {
 export const getCustomerModuleState = createFeatureSelector<CustomerState>("customer");
 export const getCustomerState = createSelector(getCustomerModuleState, state => state.customer);
 export const getCustomerItems = createSelector(getCustomerState, different_name.getCustomerItems);
+export const getIsLoading = createSelector(getCustomerState, different_name.getIsLoading);
+export const getNumbersOfRecords = createSelector(getCustomerState, different_name.getNumberOfRecords);

@@ -1,6 +1,7 @@
+<!--  <app-spinner [isVisible]="isLoading$ | async"></app-spinner> -->
 <div class="customer-container">
   <div class="newCustomer">
-    <button mat-raised-button color="primary" (click)="newCustomer()">New Cus</button>
+    <button mat-raised-button color="primary" (click)="newCustomer()">New Customer</button>
   </div>
   <div>
   <div class="customer-card" *ngFor="let item of customers$ | async">
@@ -24,7 +25,7 @@
   </div>
 </div>
 <div class="paginator-container">
-  <mat-paginator [length]="numberOfRecords" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+  <mat-paginator [length]="numberOfRecords$ | async" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
    (page)="changePage($event)">
   </mat-paginator>
 </div>
