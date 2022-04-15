@@ -14,8 +14,8 @@ import { getIsLoading, getSupplierItems } from '../state/reducers';
 })
 export class SupplierContainerComponent implements OnInit, AfterViewInit {
   searchControl: FormControl = new FormControl();
-  isVisible$: Observable<boolean> = this.store.select(getIsLoading);
-  items$: Observable<Supplier[]> = this.store.select(getSupplierItems);  
+ // isVisible$: Observable<boolean> = this.store.select(getIsLoading);
+  items$: Observable<Supplier[]> = this.store.select(getSupplierItems, null);  
   @ViewChild("cardViewTemplate") private cardViewTemplate: TemplateRef<any>;
   @ViewChild("tableViewTemplate") private tableViewTemplate: TemplateRef<any>;
   defaultemplate: string;
@@ -23,8 +23,9 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
   constructor(private ref: ChangeDetectorRef, private store: Store<any>) {
   }
   ngOnInit() {
+    console.log(this.items$);
     this.defaultemplate = SwitchViewComponent.CARD_KEY;        
-    this.getSuppliers(1,10);   
+    this.getSuppliers(1, 10);   
   }
   ngAfterViewInit(): void {
     this.templates.set(SwitchViewComponent.CARD_KEY, this.cardViewTemplate);
@@ -33,8 +34,7 @@ export class SupplierContainerComponent implements OnInit, AfterViewInit {
   }  
   getSuppliers(page: number, rows: number, searchTerm: string = ""): void {
     //this.service.getSupplierList(page, rows, searchTerm).subscribe(resp => { this.items = resp});
-    this.store.dispatch(new LoadData(page, rows, searchTerm));
-    
+    this.store.dispatch(new LoadData(page, rows, searchTerm));    
   }
   buscar(){
     //this.searchControl.valueChanges.subscribe(val => { console.log(val) })

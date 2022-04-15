@@ -1,23 +1,30 @@
+@import '../../shared/responsive-breakpoints.scss';
 .customer-container{
-     padding-top: 5%;
-    @media (max-width: 768px) {
-        padding-top: 15%;
+    padding-top: 5%;
+    @include respond-to(xs-screen)     {
+        padding-bottom: 15%;
     }
 }
 .newCustomer{
     padding-bottom: 10PX;
-    @media (max-width: 768px) {
-        padding-bottom: 15%;
+    @include respond-to(xs-screen)     {
+        padding-bottom: 10px;
     }
 }
 .customer-card{
     margin: 1%;
-     display: inline-block;
-     width:20% ;
-     margin:  1%;
-     @media (max-width: 768px) {
-         width: 98%;
-     }
+    display: inline-block;
+    width:20% ;
+    margin:  1%;
+    @include respond-to(xs-screen)     {
+        width: 96%;
+    }
+    @include respond-to(sm-screen)     {
+        width: 48%;
+    }
+    @include respond-to(md-screen)     {
+        width: 23%;
+    }
 }
 .customer-header-image{
  background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');

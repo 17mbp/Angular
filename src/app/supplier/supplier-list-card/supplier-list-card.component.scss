@@ -1,5 +1,15 @@
-.supplier-card{
+@import '../../shared/responsive-breakpoints.scss';
+.supplier-card {
     width: 20%;
     display: inline-block;
     margin: 1%;
+    @include respond-to(xs-screen)     {
+        width: 96%;
+    }
+    @include respond-to(sm-screen)     {
+        width: 48%;
+    }
+    @include respond-to(md-screen)     {
+        width: 23%;
+    }   
 }

@@ -15,7 +15,8 @@ import { getCustomerItems, getIsLoading, getNumbersOfRecords } from '../state/re
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerListComponent implements OnInit {  
-  isLoading$: Observable<boolean> = this.store.select(getIsLoading); 
+  //isLoading$: Observable<boolean> = this.store.select(getIsLoading); 
+  //isLoading$ = this.store.select(getIsLoading); 
   customers$: Observable<Customer[]> = this.store.select(getCustomerItems);
   numberOfRecords$: Observable<number> = this.store.select(getNumbersOfRecords);
   pageSizeOptions: number[] = [10, 21, 30];

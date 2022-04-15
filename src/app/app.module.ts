@@ -30,7 +30,7 @@ import { EffectsModule } from '@ngrx/effects';
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,    
-    HttpClientModule,
+    HttpClientModule,    
     MaterialModule
   ],
   providers: [AuthService, AuthGuard,
